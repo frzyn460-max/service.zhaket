@@ -1376,3 +1376,329 @@ body {
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
 }
+
+.contact-form-section {
+    padding: 70px 0;
+    background: linear-gradient(180deg, #f5f7fa 0%, #ffffff 100%);
+    position: relative;
+}
+
+.contact-form-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    border: 2px solid #f0f0f0;
+}
+
+/* Form Groups */
+.form-group {
+    margin-bottom: 0;
+}
+
+.form-label {
+    display: block;
+    font-size: 15px;
+    font-weight: 600;
+    color: #2d3436;
+    margin-bottom: 10px;
+    text-align: right;
+}
+
+/* Form Inputs */
+.form-input,
+.form-textarea {
+    width: 100%;
+    padding: 14px 18px;
+    border: 2px solid #e8ecf5;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #2d3436;
+    background: #f8f9ff;
+    transition: all 0.3s ease;
+    font-family: 'Vazirmatn', sans-serif;
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+    color: #b2bec3;
+    font-weight: 400;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color: #4B7BEC;
+    background: white;
+    box-shadow: 0 0 0 4px rgba(75, 123, 236, 0.1);
+}
+
+.form-textarea {
+    resize: vertical;
+    min-height: 120px;
+    line-height: 1.6;
+}
+
+/* Contact Note */
+.contact-note {
+    text-align: center;
+    color: #636e72;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0;
+    padding: 20px;
+    background: #f8f9ff;
+    border-radius: 12px;
+    border: 2px dashed #4B7BEC;
+}
+
+/* Submit Button */
+.submit-btn {
+    width: 100%;
+    background: linear-gradient(135deg, #FFA726 0%, #FF9800 100%);
+    color: white;
+    border: none;
+    padding: 16px 30px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 20px rgba(255, 152, 0, 0.35);
+}
+
+.submit-btn svg {
+    width: 22px;
+    height: 22px;
+    fill: white;
+}
+
+.submit-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255, 152, 0, 0.45);
+}
+
+.submit-btn:active {
+    transform: translateY(-1px);
+}
+
+/* Form Validation Styles */
+.form-input:invalid:not(:placeholder-shown),
+.form-textarea:invalid:not(:placeholder-shown) {
+    border-color: #ff6b6b;
+}
+
+.form-input:valid:not(:placeholder-shown),
+.form-textarea:valid:not(:placeholder-shown) {
+    border-color: #26de81;
+}
+
+/* ============================================
+   CONTACT FORM RESPONSIVE
+   ============================================ */
+
+/* Tablet (768px - 991px) */
+@media (max-width: 991px) {
+    .contact-form-section {
+        padding: 50px 0;
+    }
+
+    .contact-form-wrapper {
+        padding: 30px;
+    }
+
+    .form-label {
+        font-size: 14px;
+    }
+
+    .form-input,
+    .form-textarea {
+        padding: 12px 16px;
+        font-size: 13px;
+    }
+
+    .contact-note {
+        font-size: 13px;
+        padding: 16px;
+    }
+
+    .submit-btn {
+        padding: 14px 25px;
+        font-size: 15px;
+    }
+}
+
+/* Mobile (576px - 767px) */
+@media (max-width: 767px) {
+    .contact-form-section {
+        padding: 40px 0;
+    }
+
+    .contact-form-wrapper {
+        padding: 25px 20px;
+        border-radius: 16px;
+    }
+
+    .form-label {
+        font-size: 13px;
+        margin-bottom: 8px;
+    }
+
+    .form-input,
+    .form-textarea {
+        padding: 11px 14px;
+        font-size: 13px;
+        border-radius: 10px;
+    }
+
+    .form-textarea {
+        min-height: 100px;
+    }
+
+    .contact-note {
+        font-size: 12px;
+        padding: 14px;
+        border-radius: 10px;
+    }
+
+    .submit-btn {
+        padding: 13px 20px;
+        font-size: 14px;
+        border-radius: 10px;
+    }
+
+    .submit-btn svg {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+/* Mobile Small (480px - 575px) */
+@media (max-width: 575px) {
+    .contact-form-wrapper {
+        padding: 20px 15px;
+    }
+
+    .form-label {
+        font-size: 12px;
+    }
+
+    .form-input,
+    .form-textarea {
+        padding: 10px 12px;
+        font-size: 12px;
+    }
+
+    .contact-note {
+        font-size: 11px;
+        padding: 12px;
+    }
+
+    .submit-btn {
+        padding: 12px 18px;
+        font-size: 13px;
+    }
+
+    .submit-btn svg {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+/* Mobile Extra Small (320px - 479px) */
+@media (max-width: 479px) {
+    .contact-form-section {
+        padding: 30px 0;
+    }
+
+    .contact-form-wrapper {
+        padding: 18px 12px;
+        border-radius: 14px;
+    }
+
+    .form-label {
+        font-size: 11px;
+        margin-bottom: 6px;
+    }
+
+    .form-input,
+    .form-textarea {
+        padding: 9px 10px;
+        font-size: 11px;
+        border-radius: 8px;
+    }
+
+    .form-textarea {
+        min-height: 90px;
+    }
+
+    .contact-note {
+        font-size: 10px;
+        padding: 10px;
+    }
+
+    .submit-btn {
+        padding: 11px 16px;
+        font-size: 12px;
+    }
+}
+
+/* Focus Styles for Accessibility */
+.form-input:focus-visible,
+.form-textarea:focus-visible,
+.submit-btn:focus-visible {
+    outline: 3px solid #4B7BEC;
+    outline-offset: 2px;
+}
+
+/* Loading State for Submit Button */
+.submit-btn.loading {
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+.submit-btn.loading::after {
+    content: '';
+    width: 18px;
+    height: 18px;
+    border: 2px solid white;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Success State */
+.form-success {
+    text-align: center;
+    padding: 40px;
+}
+
+.form-success-icon {
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+.form-success-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #26de81;
+    margin-bottom: 10px;
+}
+
+.form-success-text {
+    font-size: 15px;
+    color: #636e72;
+}
+
+/* 
