@@ -1701,4 +1701,382 @@ body {
     color: #636e72;
 }
 
-/* 
+/* ============================================
+   PROCESS SECTION - FULLY RESPONSIVE
+   ============================================ */
+.process-section {
+    padding: 70px 0;
+    background: linear-gradient(180deg, #ffffff 0%, #ffffff 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.process-timeline {
+    margin-top: 50px;
+}
+
+/* Process Card */
+.process-card {
+    text-align: center;
+    padding: 30px 20px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.process-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Process Icon */
+.process-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 25px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 25px rgba(255, 152, 0, 0.3);
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.process-icon svg {
+    width: 40px;
+    height: 40px;
+    fill: white;
+}
+
+.process-card:hover .process-icon {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 10px 30px rgba(255, 152, 0, 0.4);
+}
+
+/* Process Line */
+.process-line {
+    position: absolute;
+    top: 70px;
+    right: 50%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent 0%, #FFA726 50%, transparent 100%);
+    background-image: repeating-linear-gradient(
+        90deg,
+        #FFA726,
+        #FFA726 10px,
+        transparent 10px,
+        transparent 20px
+    );
+    z-index: 1;
+}
+
+.process-card:last-child .process-line {
+    display: none;
+}
+
+/* Process Content */
+.process-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #2d3436;
+    margin-bottom: 12px;
+}
+
+.process-description {
+    font-size: 13px;
+    color: #636e72;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* ============================================
+   WHY SECTION - FULLY RESPONSIVE
+   ============================================ */
+.why-section {
+    padding: 70px 0;
+    background: white;
+    position: relative;
+}
+
+/* Why Card */
+.why-card {
+    text-align: center;
+    padding: 30px 20px;
+    background: white;
+    border-radius: 18px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+    transition: all 0.4s ease;
+    border: 2px solid transparent;
+    height: 100%;
+}
+
+.why-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+    border-color: #4B7BEC;
+}
+
+/* Why Icon Wrapper */
+.why-icon-wrapper {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.why-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 25px rgba(75, 123, 236, 0.3);
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.why-icon.blue-gradient {
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+}
+
+.why-icon svg {
+    width: 40px;
+    height: 40px;
+    fill: white;
+}
+
+.why-card:hover .why-icon {
+    transform: scale(1.1) rotate(10deg);
+}
+
+/* Why Line */
+.why-line {
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(135deg, #4B7BEC 0%, #3867D6 100%);
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
+/* Why Title */
+.why-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #2d3436;
+    margin: 0;
+}
+
+/* ============================================
+   PROCESS & WHY RESPONSIVE
+   ============================================ */
+
+/* Tablet (768px - 991px) */
+@media (max-width: 991px) {
+    .process-section,
+    .why-section {
+        padding: 50px 0;
+    }
+
+    .process-timeline {
+        margin-top: 40px;
+    }
+
+    .process-icon,
+    .why-icon {
+        width: 70px;
+        height: 70px;
+    }
+
+    .process-icon svg,
+    .why-icon svg {
+        width: 35px;
+        height: 35px;
+    }
+
+    .process-line {
+        top: 65px;
+    }
+
+    .process-title,
+    .why-title {
+        font-size: 16px;
+    }
+
+    .process-description {
+        font-size: 12px;
+    }
+}
+
+/* Mobile (576px - 767px) */
+@media (max-width: 767px) {
+    .process-section,
+    .why-section {
+        padding: 40px 0;
+    }
+
+    .process-timeline {
+        margin-top: 30px;
+    }
+
+    .process-card,
+    .why-card {
+        padding: 25px 15px;
+        margin-bottom: 20px;
+    }
+
+    .process-line {
+        display: none;
+    }
+
+    .process-icon,
+    .why-icon {
+        width: 65px;
+        height: 65px;
+        margin-bottom: 18px;
+    }
+
+    .process-icon svg,
+    .why-icon svg {
+        width: 32px;
+        height: 32px;
+    }
+
+    .process-title,
+    .why-title {
+        font-size: 15px;
+        margin-bottom: 10px;
+    }
+
+    .process-description {
+        font-size: 12px;
+    }
+
+    .why-line {
+        width: 50px;
+        height: 2px;
+        margin-top: 12px;
+    }
+
+    /* Add vertical connector for mobile */
+    .process-card::after {
+        content: '';
+        position: absolute;
+        bottom: -20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 2px;
+        height: 20px;
+        background: linear-gradient(180deg, #FFA726 0%, transparent 100%);
+    }
+
+    .process-card:last-child::after {
+        display: none;
+    }
+}
+
+/* Mobile Small (480px - 575px) */
+@media (max-width: 575px) {
+    .process-section,
+    .why-section {
+        padding: 35px 0;
+    }
+
+    .process-card,
+    .why-card {
+        padding: 20px 12px;
+    }
+
+    .process-icon,
+    .why-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .process-icon svg,
+    .why-icon svg {
+        width: 30px;
+        height: 30px;
+    }
+
+    .process-title,
+    .why-title {
+        font-size: 14px;
+    }
+
+    .process-description {
+        font-size: 11px;
+    }
+
+    .why-line {
+        width: 45px;
+    }
+}
+
+/* Mobile Extra Small (320px - 479px) */
+@media (max-width: 479px) {
+    .process-section,
+    .why-section {
+        padding: 30px 0;
+    }
+
+    .process-card,
+    .why-card {
+        padding: 18px 10px;
+    }
+
+    .process-icon,
+    .why-icon {
+        width: 55px;
+        height: 55px;
+        margin-bottom: 15px;
+    }
+
+    .process-icon svg,
+    .why-icon svg {
+        width: 28px;
+        height: 28px;
+    }
+
+    .process-title,
+    .why-title {
+        font-size: 13px;
+    }
+
+    .process-description {
+        font-size: 10px;
+    }
+
+    .why-line {
+        width: 40px;
+        margin-top: 10px;
+    }
+}
+
+/* Tablet Landscape - Process Line Display */
+@media (min-width: 768px) and (max-width: 991px) {
+    .process-line {
+        display: block;
+    }
+}
+
+/* Large Desktop - Better spacing */
+@media (min-width: 1400px) {
+    .process-card,
+    .why-card {
+        padding: 35px 25px;
+    }
+
+    .process-icon,
+    .why-icon {
+        width: 85px;
+        height: 85px;
+    }
+
+    .process-icon svg,
+    .why-icon svg {
+        width: 42px;
+        height: 42px;
+    }
+}
