@@ -2335,7 +2335,7 @@ body {
    ============================================ */
 .portfolio-section {
     padding: 70px 0;
-    background: linear-gradient(180deg, #f5f7fa 0%, #ffffff 100%);
+    background: linear-gradient(180deg, #ffffff 0%, #ffffff 100%);
     position: relative;
 }
 
