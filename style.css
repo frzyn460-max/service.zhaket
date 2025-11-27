@@ -11,7 +11,7 @@ body {
     background: linear-gradient(180deg, #e8ecf5 0%, #f5f7fa 50%, #ffffff 100%);
     min-height: 100vh;
     overflow-x: hidden;
-    padding-top: 20px;
+    padding-top: 0;
 }
 
 .aligncenter {
@@ -27,25 +27,31 @@ body {
 }
 
 /* ============================================
-   TOP BANNER - FULLY RESPONSIVE
+   TOP BANNER - بهبود یافته
    ============================================ */
 .top-banner {
     position: fixed;
-    top: 20px;
+    top: 15px;
     left: 50%;
     transform: translateX(-50%);
     width: calc(100% - 100px);
     max-width: 1400px;
-    height: 80px;
+    height: 70px;
     background: linear-gradient(135deg, #1a1a1a 0%, #2d1b3d 100%);
-    border-radius: 20px;
-    z-index: 999;
+    border-radius: 16px;
+    z-index: 1001;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 40px;
+    padding: 0 30px;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
     overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.top-banner.scrolled {
+    top: 10px;
+    height: 60px;
 }
 
 .top-banner::before {
@@ -55,7 +61,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="2" fill="rgba(255,255,255,0.1)"/><path d="M 20 20 L 40 10 L 30 30 Z" fill="rgba(255,100,100,0.2)"/></svg>');
+    background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="2" fill="rgba(255,255,255,0.1)"/></svg>');
     opacity: 0.3;
 }
 
@@ -69,7 +75,7 @@ body {
 }
 
 .banner-icon {
-    font-size: 36px;
+    font-size: 32px;
     animation: pulse 2s ease-in-out infinite;
     flex-shrink: 0;
 }
@@ -80,7 +86,7 @@ body {
 }
 
 .banner-title {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 700;
     margin-bottom: 3px;
     white-space: nowrap;
@@ -101,58 +107,51 @@ body {
     align-items: center;
     gap: 12px;
     color: white;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 600;
     z-index: 1;
     flex-shrink: 0;
 }
 
-.banner-right>span {
+.banner-right > span {
     white-space: nowrap;
 }
 
 .banner-discount {
     background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
-    padding: 6px 16px;
+    padding: 6px 14px;
     border-radius: 10px;
-    font-size: 13px;
+    font-size: 12px;
     white-space: nowrap;
     flex-shrink: 0;
 }
 
 @keyframes pulse {
-
-    0%,
-    100% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.1);
-    }
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
 }
 
 /* ============================================
-   HEADER - FULLY RESPONSIVE
+   HEADER - بهبود یافته
    ============================================ */
 .main-header {
     background: rgba(255, 255, 255, 0.98);
     backdrop-filter: blur(10px);
     padding: 15px 0;
     position: fixed;
-    top: 120px;
+    top: 100px;
     left: 50%;
     transform: translateX(-50%);
     width: calc(100% - 100px);
     max-width: 1400px;
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
-    border-radius: 20px;
+    border-radius: 16px;
     transition: all 0.3s ease;
 }
 
 .main-header.scrolled {
-    top: 20px;
+    top: 80px;
     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
 }
 
@@ -337,11 +336,11 @@ body {
     box-shadow: 0 6px 20px rgba(75, 123, 236, 0.4);
 }
 
-/* Mobile Navigation */
+/* Mobile Navigation - اصلاح شده */
 .mobile-nav {
     display: none;
     position: fixed;
-    top: 210px;
+    top: 185px;
     left: 50%;
     transform: translateX(-50%);
     width: calc(100% - 100px);
@@ -350,7 +349,8 @@ body {
     border-radius: 16px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
     padding: 15px;
-    z-index: 998;
+    z-index: 999;
+    transition: all 0.3s ease;
 }
 
 .mobile-nav.active {
@@ -358,12 +358,15 @@ body {
     animation: slideDown 0.3s ease;
 }
 
+.main-header.scrolled ~ .mobile-nav {
+    top: 155px;
+}
+
 @keyframes slideDown {
     from {
         opacity: 0;
         transform: translateX(-50%) translateY(-15px);
     }
-
     to {
         opacity: 1;
         transform: translateX(-50%) translateY(0);
@@ -400,9 +403,9 @@ body {
     color: #4B7BEC;
 }
 
-/* Hero Section */
+/* Hero Section - اصلاح margin-top */
 .hero-section {
-    margin-top: 220px;
+    margin-top: 200px;
     padding: 70px 30px 90px;
     max-width: 1400px;
     margin-left: auto;
@@ -520,25 +523,13 @@ body {
 }
 
 @keyframes rotate360 {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 }
 
 @keyframes float {
-
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-12px);
-    }
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
 }
 
 /* Hero Content */
@@ -663,17 +654,9 @@ body {
 }
 
 @keyframes triangleFloat {
-
-    0%,
-    100% {
-        transform: translateY(0) rotate(0);
-    }
-
-    50% {
-        transform: translateY(-15px) rotate(10deg);
-    }
+    0%, 100% { transform: translateY(0) rotate(0); }
+    50% { transform: translateY(-15px) rotate(10deg); }
 }
-
 /* Services Section */
 .services-section {
     padding: 70px 0;
@@ -946,265 +929,298 @@ body {
     box-shadow: 0 6px 18px rgba(255, 152, 0, 0.4);
 }
 
-/* ============================================
-   RESPONSIVE BREAKPOINTS
-   ============================================ */
-
-/* Large Desktop (1200px - 1399px) */
-@media (max-width: 1399px) {
-    .hero-title {
-        font-size: 38px;
-    }
-
-    .section-title {
-        font-size: 30px;
-    }
+/* Contact Form Section */
+.contact-form-section {
+    padding: 70px 0;
+    background: linear-gradient(180deg, #f5f7fa 0%, #ffffff 100%);
+    position: relative;
 }
+
+.contact-form-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    border: 2px solid #f0f0f0;
+}
+
+.form-group {
+    margin-bottom: 0;
+}
+
+.form-label {
+    display: block;
+    font-size: 15px;
+    font-weight: 600;
+    color: #2d3436;
+    margin-bottom: 10px;
+    text-align: right;
+}
+
+.form-input,
+.form-textarea {
+    width: 100%;
+    padding: 14px 18px;
+    border: 2px solid #e8ecf5;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #2d3436;
+    background: #f8f9ff;
+    transition: all 0.3s ease;
+    font-family: 'Vazirmatn', sans-serif;
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+    color: #b2bec3;
+    font-weight: 400;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color: #4B7BEC;
+    background: white;
+    box-shadow: 0 0 0 4px rgba(75, 123, 236, 0.1);
+}
+
+.form-textarea {
+    resize: vertical;
+    min-height: 120px;
+    line-height: 1.6;
+}
+
+.contact-note {
+    text-align: center;
+    color: #636e72;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0;
+    padding: 20px;
+    background: #f8f9ff;
+    border-radius: 12px;
+    border: 2px dashed #4B7BEC;
+}
+
+.submit-btn {
+    width: 100%;
+    background: linear-gradient(135deg, #FFA726 0%, #FF9800 100%);
+    color: white;
+    border: none;
+    padding: 16px 30px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 20px rgba(255, 152, 0, 0.35);
+}
+
+.submit-btn svg {
+    width: 22px;
+    height: 22px;
+    fill: white;
+}
+
+.submit-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255, 152, 0, 0.45);
+}
+
+/* ============================================
+   RESPONSIVE - اصلاح شده کامل
+   ============================================ */
 
 /* Tablet Large (992px - 1199px) */
 @media (max-width: 1199px) {
-
-    .icon-headset,
-    .icon-elementor,
-    .badge-label,
-    .project-request-btn,
-    .figma-box,
-    .triangle-top-right,
-    .triangle-bottom-left {
+    .icon-headset, .icon-elementor, .badge-label,
+    .project-request-btn, .figma-box,
+    .triangle-top-right, .triangle-bottom-left {
         display: none;
     }
 
-    .top-banner {
+    .top-banner { 
+        width: calc(100% - 60px); 
+        padding: 0 25px; 
+    }
+    
+    .main-header { 
+        width: calc(100% - 60px); 
+    }
+    
+    .mobile-nav {
         width: calc(100% - 60px);
-        padding: 0 30px;
     }
-
-    .main-header {
-        width: calc(100% - 60px);
-    }
-
-    .nav-menu {
-        gap: 18px;
-    }
-
-    .nav-menu li a {
-        font-size: 13px;
-    }
-
-    .hero-title {
-        font-size: 36px;
-    }
-
-    .section-title {
-        font-size: 28px;
-    }
+    
+    .nav-menu { gap: 18px; }
+    .nav-menu li a { font-size: 13px; }
+    
+    .hero-title { font-size: 36px; }
+    .section-title { font-size: 28px; }
 }
 
 /* Tablet (768px - 991px) */
 @media (max-width: 991px) {
     .top-banner {
-        width: calc(100% - 30px);
+        width: calc(100% - 40px);
         padding: 0 20px;
-        height: 70px;
+        height: 65px;
+        top: 12px;
     }
-
-    .banner-icon {
-        font-size: 30px;
+    
+    .top-banner.scrolled {
+        height: 55px;
+        top: 8px;
     }
-
-    .banner-title {
-        font-size: 16px;
-    }
-
-    .banner-right>span {
-        display: none;
-    }
-
-    .banner-discount {
-        font-size: 12px;
-        padding: 5px 12px;
-    }
+    
+    .banner-icon { font-size: 28px; }
+    .banner-title { font-size: 15px; }
+    .banner-right > span { display: none; }
+    .banner-discount { font-size: 11px; padding: 5px 11px; }
 
     .main-header {
-        width: calc(100% - 30px);
-        top: 110px;
+        width: calc(100% - 40px);
+        top: 90px;
         padding: 12px 0;
     }
-
-    .main-header.scrolled {
-        top: 20px;
+    
+    .main-header.scrolled { 
+        top: 70px;
     }
-
-    .header-container {
-        padding: 0 20px;
-    }
-
-    .nav-menu {
-        display: none;
-    }
-
-    .mobile-menu-toggle {
-        display: flex;
-    }
-
-    .mobile-nav {
-        width: calc(100% - 30px);
-        top: 195px;
-    }
-
-    .hero-section {
-        margin-top: 200px;
-        padding: 50px 20px 70px;
-    }
-
-    .hero-title {
-        font-size: 32px;
-    }
-
-    .hero-description {
-        font-size: 14px;
-    }
-
-    .services-section,
-    .pricing-section {
-        padding: 50px 0;
-    }
-
-    .section-title {
-        font-size: 26px;
-    }
-
-    .section-header {
-        margin-bottom: 35px;
-    }
-}
-
-/* Mobile (576px - 767px) */
-@media (max-width: 767px) {
-    body {
-        padding-top: 10px;
-    }
-
-    .top-banner {
-        top: 10px;
-        width: calc(100% - 20px);
-        height: 65px;
-        padding: 0 15px;
-    }
-
-    .banner-left {
-        gap: 10px;
-    }
-
-    .banner-icon {
-        font-size: 26px;
-    }
-
-    .banner-title Continue css .banner-title {
-        font-size: 14px;
-    }
-
-    .banner-subtitle {
-        display: none;
-    }
-
-    .banner-discount {
-        font-size: 11px;
-        padding: 4px 10px;
-    }
-
-    .main-header {
-        top: 90px;
-        width: calc(100% - 20px);
-        padding: 10px 0;
-    }
-
-    .main-header.scrolled {
-        top: 10px;
-    }
-
-    .header-container {
-        padding: 0 15px;
-        gap: 10px;
-    }
-
-    .logo-icon {
-        width: 40px;
-        height: 40px;
-    }
-
-    .logo-icon svg {
-        width: 22px;
-        height: 22px;
-    }
-
-    .logo-text {
-        font-size: 15px;
-    }
-
-    .mobile-menu-toggle {
-        width: 38px;
-        height: 38px;
-    }
-
-    .mobile-menu-toggle span {
-        width: 18px;
-    }
-
-    .cart-btn {
-        width: 40px;
-        height: 40px;
-    }
-
-    .cart-btn img {
-        width: 20px;
-        height: 20px;
-    }
-
-    .consultation-btn {
-        padding: 10px 16px;
-        font-size: 13px;
-    }
-
-    .consultation-btn span {
-        display: none;
-    }
-
-    .consultation-btn::after {
-        content: 'مشاوره';
-    }
-
-    .mobile-nav {
+    
+    .header-container { padding: 0 20px; }
+    
+    .nav-menu { display: none; }
+    .mobile-menu-toggle { display: flex; }
+    
+    .mobile-nav { 
+        width: calc(100% - 40px); 
         top: 170px;
-        width: calc(100% - 20px);
+    }
+    
+    .main-header.scrolled ~ .mobile-nav {
+        top: 140px;
     }
 
     .hero-section {
         margin-top: 180px;
+        padding: 50px 20px 70px;
+    }
+    
+    .hero-title { font-size: 32px; }
+    .hero-description { font-size: 14px; }
+
+    .services-section, .pricing-section, .contact-form-section { 
+        padding: 50px 0; 
+    }
+    
+    .section-title { font-size: 26px; }
+    .section-header { margin-bottom: 35px; }
+}
+
+/* Mobile (576px - 767px) */
+@media (max-width: 767px) {
+    body { padding-top: 0; }
+
+    .top-banner {
+        top: 8px;
+        width: calc(100% - 20px);
+        height: 58px;
+        padding: 0 15px;
+    }
+    
+    .top-banner.scrolled {
+        top: 5px;
+        height: 52px;
+    }
+    
+    .banner-left { gap: 10px; }
+    .banner-icon { font-size: 24px; }
+    .banner-title { font-size: 13px; }
+    .banner-subtitle { display: none; }
+    .banner-discount { font-size: 10px; padding: 4px 9px; }
+
+    .main-header {
+        top: 75px;
+        width: calc(100% - 20px);
+        padding: 10px 0;
+    }
+    
+    .main-header.scrolled { 
+        top: 60px;
+    }
+    
+    .header-container { 
+        padding: 0 15px; 
+        gap: 8px; 
+    }
+    
+    .logo-icon { width: 38px; height: 38px; }
+    .logo-icon svg { width: 21px; height: 21px; }
+    .logo-text { font-size: 14px; }
+    
+    .mobile-menu-toggle { 
+        width: 38px; 
+        height: 38px; 
+    }
+    .mobile-menu-toggle span { width: 17px; }
+    
+    .cart-btn { 
+        width: 38px; 
+        height: 38px; 
+    }
+    .cart-btn img { 
+        width: 19px; 
+        height: 19px; 
+    }
+    
+    .consultation-btn { 
+        padding: 9px 14px; 
+        font-size: 12px; 
+    }
+    .consultation-btn span { display: none; }
+    .consultation-btn::after { content: 'مشاوره'; }
+    
+    .mobile-nav {
+        top: 148px;
+        width: calc(100% - 20px);
+    }
+    
+    .main-header.scrolled ~ .mobile-nav {
+        top: 120px;
+    }
+
+    .hero-section {
+        margin-top: 160px;
         padding: 40px 15px 60px;
     }
-
+    
     .hero-title {
-        font-size: 26px;
+        font-size: 25px;
         margin-bottom: 18px;
     }
-
+    
     .hero-description {
         font-size: 13px;
         line-height: 1.7;
         margin-bottom: 25px;
     }
-
-    .hero-description br {
-        display: none;
-    }
-
+    
+    .hero-description br { display: none; }
+    
     .cta-buttons {
         flex-direction: column;
         width: 100%;
         gap: 10px;
     }
-
+    
     .btn-special-site,
     .btn-view-plans {
         width: 100%;
@@ -1212,310 +1228,308 @@ body {
         padding: 12px 20px;
         font-size: 13px;
     }
-
+    
     .triangle-right,
     .triangle-left {
-        border-left: 18px solid transparent;
-        border-right: 18px solid transparent;
-        border-bottom: 22px solid #FFA726;
+        border-left: 16px solid transparent;
+        border-right: 16px solid transparent;
+        border-bottom: 20px solid #FFA726;
     }
 
-    .aligncenter {
-        padding: 20px 10px;
-    }
-
+    .aligncenter { padding: 20px 10px; }
+    
     .services-section,
-    .pricing-section {
+    .pricing-section,
+    .contact-form-section {
         padding: 40px 0;
     }
-
-    .section-title {
-        font-size: 24px;
-    }
-
-    .section-subtitle {
-        font-size: 13px;
-    }
-
-    .section-subtitle br {
-        display: none;
-    }
-
-    .section-header {
-        margin-bottom: 30px;
-    }
-
+    
+    .section-title { font-size: 23px; }
+    .section-subtitle { font-size: 13px; }
+    .section-subtitle br { display: none; }
+    .section-header { margin-bottom: 30px; }
+    
     .service-card,
     .pricing-card {
         padding: 22px;
         margin-bottom: 16px;
     }
-
+    
     .service-icon,
     .pricing-icon {
-        width: 55px;
-        height: 55px;
+        width: 54px;
+        height: 54px;
         margin-bottom: 16px;
     }
-
+    
     .service-icon img,
     .pricing-icon svg {
-        width: 28px;
-        height: 28px;
+        width: 27px;
+        height: 27px;
     }
-
+    
     .service-title,
     .pricing-title {
-        font-size: 17px;
+        font-size: 16px;
         margin-bottom: 12px;
     }
-
+    
     .service-description,
     .pricing-description {
         font-size: 12px;
         line-height: 1.6;
         margin-bottom: 16px;
     }
-
-    .pricing-description br {
-        display: none;
-    }
-
+    
+    .pricing-description br { display: none; }
+    
     .service-btn,
     .pricing-btn {
         padding: 11px 20px;
         font-size: 13px;
     }
-
-    .featured-badge {
-        font-size: 11px;
-        padding: 4px 12px;
-        top: -8px;
-        right: 20px;
-    }
-
+    
     .pricing-price-box {
         padding: 14px;
         margin-bottom: 16px;
     }
-
-    .pricing-price {
-        font-size: 20px;
-    }
-
+    
+    .pricing-price { font-size: 19px; }
+    
     .pricing-features li {
         font-size: 12px;
         margin-bottom: 10px;
     }
-
-    .pricing-features hr {
-        margin: 10px 0;
+    
+    .pricing-features hr { margin: 10px 0; }
+    
+    /* Contact Form */
+    .contact-form-wrapper {
+        padding: 25px 18px;
+        border-radius: 16px;
+    }
+    
+    .form-label {
+        font-size: 13px;
+        margin-bottom: 8px;
+    }
+    
+    .form-input,
+    .form-textarea {
+        padding: 11px 14px;
+        font-size: 13px;
+        border-radius: 10px;
+    }
+    
+    .form-textarea {
+        min-height: 100px;
+    }
+    
+    .contact-note {
+        font-size: 12px;
+        padding: 14px;
+        border-radius: 10px;
+    }
+    
+    .submit-btn {
+        padding: 13px 20px;
+        font-size: 14px;
+        border-radius: 10px;
+    }
+    
+    .submit-btn svg {
+        width: 19px;
+        height: 19px;
     }
 }
 
 /* Mobile Small (480px - 575px) */
 @media (max-width: 575px) {
-    .banner-icon {
-        font-size: 24px;
-    }
-
-    .banner-title {
-        font-size: 13px;
-    }
-
-    .banner-discount {
-        font-size: 10px;
-        padding: 3px 8px;
-    }
-
-    .logo-text {
-        font-size: 14px;
-    }
-
+    .banner-icon { font-size: 22px; }
+    .banner-title { font-size: 12px; }
+    .banner-discount { font-size: 9px; padding: 3px 7px; }
+    
+    .logo-text { font-size: 13px; }
+    
     .consultation-btn {
         padding: 0;
-        width: 38px;
-        height: 38px;
+        width: 36px;
+        height: 36px;
         justify-content: center;
     }
-
+    
     .consultation-btn::after {
         content: '📞';
-        font-size: 18px;
+        font-size: 16px;
     }
-
-    .consultation-btn img {
-        display: none;
-    }
-
-    .hero-title {
-        font-size: 23px;
-    }
-
-    .hero-description {
-        font-size: 12px;
-    }
-
+    
+    .consultation-btn img { display: none; }
+    
+    .hero-title { font-size: 22px; }
+    .hero-description { font-size: 12px; }
+    
     .btn-special-site img,
     .btn-view-plans img {
-        width: 16px;
-        height: 16px;
+        width: 15px;
+        height: 15px;
     }
-
-    .section-title {
-        font-size: 22px;
-    }
-
-    .section-subtitle {
-        font-size: 12px;
-    }
-
+    
+    .section-title { font-size: 21px; }
+    .section-subtitle { font-size: 12px; }
+    
     .service-card,
     .pricing-card {
         padding: 18px;
     }
-
+    
     .service-title,
     .pricing-title {
-        font-size: 16px;
+        font-size: 15px;
     }
-
+    
     .service-description,
     .pricing-description {
         font-size: 11px;
     }
-
-    .pricing-price {
-        font-size: 18px;
-    }
-
-    .pricing-features li {
-        font-size: 11px;
-    }
+    
+    .pricing-price { font-size: 17px; }
+    .pricing-features li { font-size: 11px; }
+    
+    .form-label { font-size: 12px; }
+    .form-input, .form-textarea { font-size: 12px; padding: 10px 12px; }
+    .contact-note { font-size: 11px; padding: 12px; }
+    .submit-btn { font-size: 13px; padding: 12px 18px; }
 }
 
 /* Mobile Extra Small (320px - 479px) */
 @media (max-width: 479px) {
     .top-banner {
-        height: 60px;
+        height: 52px;
         padding: 0 12px;
+        top: 6px;
     }
-
-    .banner-left {
-        gap: 8px;
+    
+    .top-banner.scrolled {
+        height: 48px;
+        top: 4px;
     }
-
-    .banner-icon {
-        font-size: 22px;
+    
+    .banner-left { gap: 8px; }
+    .banner-icon { font-size: 20px; }
+    .banner-title { font-size: 11px; }
+    .banner-discount { font-size: 8px; padding: 3px 6px; }
+    
+    .main-header {
+        top: 65px;
     }
-
-    .banner-title {
-        font-size: 12px;
+    
+    .main-header.scrolled {
+        top: 55px;
     }
-
-    .banner-discount {
-        font-size: 9px;
-        padding: 3px 6px;
-    }
-
-    .header-container {
-        padding: 0 12px;
-    }
-
-    .logo-icon {
-        width: 36px;
-        height: 36px;
-    }
-
-    .logo-icon svg {
-        width: 20px;
-        height: 20px;
-    }
-
-    .logo-text {
-        font-size: 13px;
-    }
-
-    .mobile-menu-toggle {
-        width: 36px;
-        height: 36px;
-    }
-
-    .mobile-menu-toggle span {
-        width: 16px;
-    }
-
-    .cart-btn {
-        width: 36px;
-        height: 36px;
-    }
-
-    .cart-btn img {
-        width: 18px;
-        height: 18px;
-    }
-
+    
+    .header-container { padding: 0 12px; }
+    
+    .logo-icon { width: 35px; height: 35px; }
+    .logo-icon svg { width: 19px; height: 19px; }
+    .logo-text { font-size: 12px; }
+    
+    .mobile-menu-toggle { width: 35px; height: 35px; }
+    .mobile-menu-toggle span { width: 15px; }
+    
+    .cart-btn { width: 35px; height: 35px; }
+    .cart-btn img { width: 17px; height: 17px; }
+    
     .consultation-btn {
-        width: 36px;
-        height: 36px;
+        width: 35px;
+        height: 35px;
     }
-
-    .consultation-btn::after {
-        font-size: 16px;
+    
+    .consultation-btn::after { font-size: 15px; }
+    
+    .mobile-nav {
+        top: 135px;
     }
-
-    .hero-title {
-        font-size: 21px;
+    
+    .main-header.scrolled ~ .mobile-nav {
+        top: 110px;
     }
-
-    .hero-description {
-        font-size: 11px;
+    
+    .hero-section {
+        margin-top: 150px;
     }
-
-    .section-title {
-        font-size: 20px;
-    }
-
-    .section-subtitle {
-        font-size: 11px;
-    }
-
+    
+    .hero-title { font-size: 20px; }
+    .hero-description { font-size: 11px; }
+    
+    .section-title { font-size: 19px; }
+    .section-subtitle { font-size: 11px; }
+    
     .service-card,
     .pricing-card {
         padding: 16px;
     }
-
+    
     .service-icon,
     .pricing-icon {
-        width: 50px;
-        height: 50px;
+        width: 48px;
+        height: 48px;
     }
-
+    
     .service-icon img,
     .pricing-icon svg {
-        width: 26px;
-        height: 26px;
+        width: 24px;
+        height: 24px;
     }
-
+    
     .service-title,
     .pricing-title {
-        font-size: 15px;
+        font-size: 14px;
     }
-
+    
     .service-description,
     .pricing-description,
     .pricing-features li {
         font-size: 10px;
     }
-
+    
     .service-btn,
     .pricing-btn {
         font-size: 12px;
         padding: 10px 16px;
     }
+    
+    .pricing-price { font-size: 16px; }
+    
+    .form-label { font-size: 11px; }
+    .form-input, .form-textarea { font-size: 11px; padding: 9px 10px; }
+    .form-textarea { min-height: 85px; }
+    .contact-note { font-size: 10px; padding: 10px; }
+    .submit-btn { font-size: 12px; padding: 11px 16px; }
+    .submit-btn svg { width: 17px; height: 17px; }
+}
 
-    .pricing-price {
-        font-size: 17px;
+/* Accessibility & Other Styles */
+button:focus-visible,
+a:focus-visible {
+    outline: 2px solid #4B7BEC;
+    outline-offset: 2px;
+}
+
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
     }
 }
 
